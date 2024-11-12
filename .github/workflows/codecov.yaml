@@ -1,0 +1,40 @@
+name: CI - Test and Codecov
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository code
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16" # Use the Node.js version compatible with your app
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run tests and generate coverage
+      - name: Run tests with coverage
+        run: npm run test -- --coverage
+
+      # Step 5: Upload coverage report to Codecov
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # Codecov token stored in GitHub secrets
+          files: ./coverage/lcov.info # Path to the coverage report
+          flags: unittests # Optional, helps to differentiate between different types of tests
+          name: codecov-coverage # Optional, a name for the report
+          fail_ci_if_error: true # Fails the job if Codecov upload fails
