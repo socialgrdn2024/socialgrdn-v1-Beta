@@ -13,7 +13,7 @@ jobs:
     steps:
       # Step 1: Check out the repository code
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # Step 2: Set up Node.js
       - name: Set up Node.js
@@ -34,7 +34,7 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # Codecov token stored in GitHub secrets
-          files: ./coverage/lcov.info # Path to the coverage report
+          files: ../coverage/lcov.info # Path to the coverage report
           flags: unittests # Optional, helps to differentiate between different types of tests
           name: codecov-coverage # Optional, a name for the report
           fail_ci_if_error: true # Fails the job if Codecov upload fails
