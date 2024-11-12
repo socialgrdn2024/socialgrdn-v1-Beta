@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+input[type="range"] {
+  @apply appearance-none w-full h-2 rounded-lg cursor-pointer;
+  background: linear-gradient(to right, #22c55e 0%, #bbf7d0 0%); /* Initial gradient */
+}
+
+/* WebKit Track */
+input[type="range"]::-webkit-slider-runnable-track {
+  @apply h-2 rounded-lg;
+  background: transparent; /* Background handled by the input */
+}
+
+/* Firefox Track */
+input[type="range"]::-moz-range-track {
+  @apply h-2 rounded-lg;
+  background: transparent; /* Background handled by the input */
+}
+
+/* WebKit Thumb */
+input[type="range"]::-webkit-slider-thumb {
+  @apply w-5 h-5 bg-green-500 rounded-full cursor-pointer;
+  appearance: none;
+  margin-top: -6px; /* Align thumb with track */
+}
+
+/* Firefox Thumb */
+input[type="range"]::-moz-range-thumb {
+  @apply w-5 h-5 bg-green-500 rounded-full cursor-pointer;
+}
+
+/* CSS for react-slider */
+.horizontal-slider {
+  width: 100%;
+  height: 10px;
+  margin-top: 20px;
+}
+
+.example-thumb {
+  height: 15px;
+  width: 15px;
+  background-color: #169e1b;
+  border-radius: 50%;
+  cursor: grab;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.example-track {
+  top: 0;
+  bottom: 0;
+  background: #96fcbd;
+  border-radius: 999px;
+}
+/* text input border should be green onclick */
+input[type="text"]:focus {
+  border: 1px solid #7bffac;
+}
