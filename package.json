@@ -51,6 +51,8 @@
     "start": "node backend/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage",
+    "coverage:upload": "type .\\coverage\\lcov.info | coveralls",
     "eject": "react-scripts eject",
     "dev:react": "set PORT=3001 && react-scripts start",
     "dev:backend": "nodemon backend/index.js",
@@ -80,6 +82,7 @@
     "@testing-library/react": "^16.0.1",
     "babel-jest": "^29.7.0",
     "concurrently": "^8.2.2",
+    "coveralls": "^3.1.1",
     "jest": "^27.5.1",
     "nodemon": "^3.1.4",
     "tailwindcss": "^3.4.6"
