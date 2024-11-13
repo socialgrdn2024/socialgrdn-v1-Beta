@@ -50,7 +50,7 @@
   "scripts": {
     "start": "node backend/index.js",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev:react": "set PORT=3001 && react-scripts start",
     "dev:backend": "nodemon backend/index.js",
@@ -75,7 +75,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
     "@testing-library/react": "^16.0.1",
+    "babel-jest": "^29.7.0",
     "concurrently": "^8.2.2",
     "jest": "^27.5.1",
     "nodemon": "^3.1.4",
